@@ -1,24 +1,17 @@
 fibonacci = function(enesimo) {
+    let atual = 1;
+    let anterior = 1;
+    let fibonacci;
     if(enesimo == 1)
         return 1;
     if(enesimo == 2)
         return 1;
-    if(enesimo == 3)
-        return 2;
-    if(enesimo == 4)
-        return 3;
-    if(enesimo == 5)
-        return 5;
-    if(enesimo == 6)
-        return 8;
-    if(enesimo == 7)
-        return 13;
-    if(enesimo == 8)
-        return 21;
-    if(enesimo == 9)
-        return 34;
-    if(enesimo == 10)
-        return 55;
+    for(i = 3; i<= enesimo; i++){
+        fibonacci = atual + anterior;
+        anterior = atual;
+        atual = fibonacci;
+    }
+    return fibonacci;
 }
 
 console.log(fibonacci(7));
